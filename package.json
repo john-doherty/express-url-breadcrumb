@@ -1,0 +1,24 @@
+{
+  "name": "express-url-breadcrumb",
+  "version": "0.0.1",
+  "description": "Generates an array of breadcrumb items from the current URL and automatically exposes them to views via a variable named breadcrumb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/john-doherty/express-url-breadcrumb.git"
+  },
+  "keywords": [
+    "express",
+    "breadcrumb",
+    "express-url-breadcrumb"
+  ],
+  "author": "John Doherty <contact@johndoherty.info>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john-doherty/express-url-breadcrumb/issues"
+  },
+  "homepage": "https://github.com/john-doherty/express-url-breadcrumb#readme"
+}
