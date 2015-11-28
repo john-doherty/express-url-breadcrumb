@@ -32,9 +32,15 @@ The example below demonstrates how to render a SEO friendly breadcrumb using a h
 <ol class="breadcrumb">
 	{{#each breadcrumb}}
 		{{#unless @last}}
-			<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{this.url}}" itemprop="url"><span itemprop="title">{{this.label}}</span></a></li>
+			<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a href="{{this.url}}" itemprop="url">
+					<span itemprop="title">{{this.label}}</span>
+				</a>
+			</li>
 		{{else}}
-			<li><span>{{this.label}}</span></li>
+			<li>
+				<span>{{this.label}}</span>
+			</li>
 		{{/unless}}
 	{{/each}}
 </ol>
