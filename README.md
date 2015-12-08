@@ -1,5 +1,7 @@
 # express-url-breadcrumb
 
+[![Build Status](https://travis-ci.org/john-doherty/express-url-breadcrumb.svg?branch=master)](https://travis-ci.org/john-doherty/express-url-breadcrumb)
+
 Generates a breadcrumb array from the current URL and exposes to views via a `breadcrumb` variable. 
 
 Very useful when you need to generate SEO friendly breadcrumbs as shown below:
