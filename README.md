@@ -1,6 +1,7 @@
 # express-url-breadcrumb
 
 [![Build Status](https://travis-ci.org/john-doherty/express-url-breadcrumb.svg?branch=master)](https://travis-ci.org/john-doherty/express-url-breadcrumb)
+[![Downloads per month](https://img.shields.io/npm/dm/express-url-breadcrumb.svg)](https://img.shields.io/npm/dm/express-url-breadcrumb.svg)
 
 Generates a breadcrumb array from the current URL and exposes to views via a `breadcrumb` variable. 
 
