@@ -1,32 +1,42 @@
 # express-url-breadcrumb
 
-Generates an array of breadcrumb items from the current URL and automatically exposes them to views via a variable named `breadcrumb`. 
+Generates a breadcrumb array from the current URL and exposes to views via a `breadcrumb` variable. 
 
-The module is very useful when you need to generate SEO friendly breadcrumbs as shown below:
+Very useful when you need to generate SEO friendly breadcrumbs as shown below:
 
-## Install
+## Installation
 
 ```bash
-npm install express-url-breadcrumb --save
+$ npm install --save express-url-breadcrumb
 ```
 
 ## Usage
-
-### Server
-
 Add the module to your server application and attach to express. 
 
 ```js
-// require module
 var breadcrumb = require('express-url-breadcrumb');
 
-// ask express to use it on all requests 
-app.use(breadcrumb);
+// use for every request  
+app.use(breadcrumb());
+
+// alternatively, add to a specific route
+app.get('/snickers-workwear/snickers-trousers/snickers-3211-craftsmen-trousers', breadcrumb(), function(req, res){
+	res.render('product-detail');
+});
+```
+
+Optionally pass a modifier function to the constructor:
+```js
+// use for every request  
+app.use(breadcrumb(function(item){
+	// convert each breadcrumb label to upper case
+	item.label = item.label.toUpperCase(); 
+}));
 ```
 
 ### View Template
 
-The example below demonstrates how to render a SEO friendly breadcrumb using a handlebars.js template. 
+The example below demonstrates how to render a SEO friendly breadcrumb using a handlebars.js template. Notice the ```breadcrumb``` variable has not been passed in, it's already available to all views. 
 
 ```html
 <ol class="breadcrumb">
@@ -47,8 +57,7 @@ The example below demonstrates how to render a SEO friendly breadcrumb using a h
 
 ```
 
-### Output
-The URL http://mammothworkwear.com/snickers-workwear/snickers-trousers/snickers-3211-craftsmen-trousers would generate the following breadcrumb.
+### HTML Output
 
 ```html
 <ol class="breadcrumb">
@@ -73,7 +82,7 @@ The URL http://mammothworkwear.com/snickers-workwear/snickers-trousers/snickers-
 </ol>
 ```
 
-The `breadcrumb` variable is an `Array` of objects. To give you an example of its structure I have included an example of its manual creation based on the url above.
+The `breadcrumb` variable is an `Array` of objects. To give you an idea of its structure, here is a version created manually:
 
 ```js
   var breadcrumb = [];
@@ -83,3 +92,19 @@ The `breadcrumb` variable is an `Array` of objects. To give you an example of it
   breadcrumb.push({ label: 'Snickers Trousers', url: 'http://mammothworkwear.com/snickers-workwear/snickers-trousers' });
   breadcrumb.push({ label: 'Snickers 3211 Craftsmen Trousers', url: 'http://mammothworkwear.com/snickers-workwear/snickers-trousers/snickers-3211-craftsmen-trousers' });
 ```
+Each item in the ```breadcrumb``` array has a ```.url``` and a ```.label``` property.
+
+
+## Tests
+You can run unit tests using:
+```bash
+$ npm test
+```
+You can also request code coverage information using:
+```bash
+$ npm test --coverage
+```
+
+## Changes
+###  0.0.4 > 0.0.5
+**Breaking Change:** Added breadcrumb constructor to allow a modifier function to be passed. It must now be instantiated using parenthesis ```breadcrumb()```
