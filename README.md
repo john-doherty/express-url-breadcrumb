@@ -31,7 +31,7 @@ app.get('/snickers-workwear/snickers-trousers/snickers-3211-craftsmen-trousers',
 Optionally pass a modifier function to the constructor:
 ```js
 // use for every request  
-app.use(breadcrumb(function(item){
+app.use(breadcrumb(function(item, index){
 	// convert each breadcrumb label to upper case
 	item.label = item.label.toUpperCase(); 
 }));
@@ -109,5 +109,7 @@ $ npm test --coverage
 ```
 
 ## Changes
+### 0.0.6
+Removed internal toTitleCase function used to format labels. This can be done using the modifier function mentioned above. 
 ###  0.0.4 > 0.0.5
 **Breaking Change:** Added breadcrumb constructor to allow a modifier function to be passed. It must now be instantiated using parenthesis ```breadcrumb()```
