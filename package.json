@@ -1,6 +1,6 @@
 {
   "name": "express-url-breadcrumb",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Generates an array of breadcrumb items from the current URL and automatically exposes them to views via a variable named breadcrumb",
   "main": "index.js",
   "scripts": {
