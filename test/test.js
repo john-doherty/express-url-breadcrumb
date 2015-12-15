@@ -52,12 +52,10 @@ describe('breadcrum middleware', function(){
     
     // create an express app
     var app = express(),
-        url = '/really/long/url/with/lots/of/segments',
-        iterations = 0;
+        url = '/really/long/url/with/lots/of/segments';
 
-    var modifier = function(item){
-      item.label = iterations;
-      iterations++; 
+    var modifier = function(item, index){
+      item.label = index;
     };
     
     // hook up breadcrumb middleware
@@ -86,12 +84,10 @@ describe('breadcrum middleware', function(){
     
     // create an express app
     var app = express(),
-        url = '/really/long/url/with/lots/of/segments',
-        iterations = 0;
+        url = '/really/long/url/with/lots/of/segments';
 
-    var modifier = function(item){
+    var modifier = function(item, index){
       item.label = item.label.toUpperCase();
-      iterations++; 
     };
     
     // hook up breadcrumb middleware
