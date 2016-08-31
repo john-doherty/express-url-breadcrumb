@@ -24,7 +24,7 @@ app.use(breadcrumb());
 
 // alternatively, add to a specific route
 app.get('/snickers-workwear/snickers-trousers/snickers-3211-craftsmen-trousers', breadcrumb(), function(req, res){
-	res.render('product-detail');
+    res.render('product-detail');
 });
 ```
 
@@ -32,8 +32,8 @@ Optionally pass a modifier function to the constructor:
 ```js
 // use for every request  
 app.use(breadcrumb(function(item, index){
-	// convert each breadcrumb label to upper case
-	item.label = item.label.toUpperCase(); 
+    // convert each breadcrumb label to upper case
+    item.label = item.label.toUpperCase(); 
 }));
 ```
 
@@ -43,19 +43,19 @@ The example below demonstrates how to render a SEO friendly breadcrumb using a h
 
 ```html
 <ol class="breadcrumb">
-	{{#each breadcrumb}}
-		{{#unless @last}}
-			<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-				<a href="{{this.url}}" itemprop="url">
-					<span itemprop="title">{{this.label}}</span>
-				</a>
-			</li>
-		{{else}}
-			<li>
-				<span>{{this.label}}</span>
-			</li>
-		{{/unless}}
-	{{/each}}
+    {{#each breadcrumb}}
+        {{#unless @last}}
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="{{this.url}}" itemprop="url">
+                    <span itemprop="title">{{this.label}}</span>
+                </a>
+            </li>
+        {{else}}
+            <li>
+                <span>{{this.label}}</span>
+            </li>
+        {{/unless}}
+    {{/each}}
 </ol>
 
 ```
@@ -64,24 +64,24 @@ The example below demonstrates how to render a SEO friendly breadcrumb using a h
 
 ```html
 <ol class="breadcrumb">
-	<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="http://mammothworkwear.com" itemprop="url">
-			<span itemprop="title">Home</span>
-		</a>
-	</li>
-	<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="http://mammothworkwear.com/snickers-workwear" itemprop="url">
-			<span itemprop="title">Snickers Workwear</span>
-		</a>
-	</li>
-	<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="http://mammothworkwear.com/snickers-workwear/snickers-trousers" itemprop="url">
-			<span itemprop="title">Snickers Trousers</span>
-		</a>
-	</li>
-	<li>
-		<span>Snickers 3211 Craftsmen Trousers</span>
-	</li>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="http://mammothworkwear.com" itemprop="url">
+            <span itemprop="title">Home</span>
+        </a>
+    </li>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="http://mammothworkwear.com/snickers-workwear" itemprop="url">
+            <span itemprop="title">Snickers Workwear</span>
+        </a>
+    </li>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="http://mammothworkwear.com/snickers-workwear/snickers-trousers" itemprop="url">
+            <span itemprop="title">Snickers Trousers</span>
+        </a>
+    </li>
+    <li>
+        <span>Snickers 3211 Craftsmen Trousers</span>
+    </li>
 </ol>
 ```
 
@@ -113,3 +113,7 @@ $ npm test --coverage
 Removed internal toTitleCase function used to format labels. This can be done using the modifier function mentioned above. 
 ###  0.0.4 > 0.0.5
 **Breaking Change:** Added breadcrumb constructor to allow a modifier function to be passed. It must now be instantiated using parenthesis ```breadcrumb()```
+
+## License
+
+[ISC License](LICENSE) &copy; 2016 [John Doherty](https://courseof.life/johndoherty)
