@@ -1,7 +1,5 @@
 # express-url-breadcrumb
-
-[![Build Status](https://travis-ci.org/john-doherty/express-url-breadcrumb.svg?branch=master)](https://travis-ci.org/john-doherty/express-url-breadcrumb)
-[![Downloads per month](https://img.shields.io/npm/dm/express-url-breadcrumb.svg)](https://img.shields.io/npm/dm/express-url-breadcrumb.svg)
+[![Shippable branch](https://img.shields.io/shippable/5818b23bd1184e0f002e1a9c/master.svg)](https://app.shippable.com/projects/5818b23bd1184e0f002e1a9c) [![npm](https://img.shields.io/npm/dt/express-url-breadcrumb.svg)](https://www.npmjs.com/package/express-url-breadcrumb) [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/CambridgeMVP.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/CambridgeMVP)
 
 Generates a breadcrumb array from the current URL and exposes to views via a `breadcrumb` variable. 
 
