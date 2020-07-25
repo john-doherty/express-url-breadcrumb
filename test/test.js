@@ -1,11 +1,11 @@
-var express = require('express'),
-    request = require('supertest'),
-    assert = require('assert'),
-    breadcrumb = require('../lib/breadcrumb.js');
+var express = require('express');
+var request = require('supertest');
+var assert = require('assert');
+var breadcrumb = require('../lib/breadcrumb.js');
 
-describe('breadcrum middleware', function(){
+describe('express-url-breadcrumb', function(){
   
-  it('should return an item for each url segment',function(done){
+  it('Should return an item for each url segment',function(done){
     
     // create an express app
     var app = express(),
@@ -24,7 +24,7 @@ describe('breadcrum middleware', function(){
     request(app).get(url).expect(200, done);
   });
   
-  it('should execute modifer for each item in the breadcrumb',function(done){
+  it('Should execute modifier for each breadcrumb item',function(done){
     
     // create an express app
     var app = express(),
@@ -48,7 +48,7 @@ describe('breadcrum middleware', function(){
     request(app).get(url).expect(200, done);
   });
   
-  it('should modify items via modifier',function(done){
+  it('Should modify items via modifier',function(done){
     
     // create an express app
     var app = express(),
@@ -80,7 +80,7 @@ describe('breadcrum middleware', function(){
     request(app).get(url).expect(200, done);
   });
   
-  it('should convert label case using modifier',function(done){
+  it('Should convert label case using modifier',function(done){
     
     // create an express app
     var app = express(),
