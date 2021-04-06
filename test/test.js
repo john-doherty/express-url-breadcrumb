@@ -16,7 +16,7 @@ describe('express-url-breadcrumb', function(){
     
     // route with middleware
     app.get(url, function(req, res){
-      assert.equal(req.app.locals.breadcrumb.length, 8);
+      assert.equal(res.locals.breadcrumb.length, 8);
       res.status(200).end();
     });
     
@@ -64,14 +64,14 @@ describe('express-url-breadcrumb', function(){
     // route with middleware
     app.get(url, function(req, res){
       
-      assert.equal(req.app.locals.breadcrumb[0].label, 0);
-      assert.equal(req.app.locals.breadcrumb[1].label, 1);
-      assert.equal(req.app.locals.breadcrumb[2].label, 2);
-      assert.equal(req.app.locals.breadcrumb[3].label, 3);
-      assert.equal(req.app.locals.breadcrumb[4].label, 4);
-      assert.equal(req.app.locals.breadcrumb[5].label, 5);
-      assert.equal(req.app.locals.breadcrumb[6].label, 6);
-      assert.equal(req.app.locals.breadcrumb[7].label, 7);
+      assert.equal(res.locals.breadcrumb[0].label, 0);
+      assert.equal(res.locals.breadcrumb[1].label, 1);
+      assert.equal(res.locals.breadcrumb[2].label, 2);
+      assert.equal(res.locals.breadcrumb[3].label, 3);
+      assert.equal(res.locals.breadcrumb[4].label, 4);
+      assert.equal(res.locals.breadcrumb[5].label, 5);
+      assert.equal(res.locals.breadcrumb[6].label, 6);
+      assert.equal(res.locals.breadcrumb[7].label, 7);
       
       res.status(200).end();
     });
@@ -96,14 +96,14 @@ describe('express-url-breadcrumb', function(){
     // route with middleware
     app.get(url, function(req, res){
 
-      assert.equal(req.app.locals.breadcrumb[0].label, 'HOME');      
-      assert.equal(req.app.locals.breadcrumb[1].label, 'REALLY');
-      assert.equal(req.app.locals.breadcrumb[2].label, 'LONG');
-      assert.equal(req.app.locals.breadcrumb[3].label, 'URL');
-      assert.equal(req.app.locals.breadcrumb[4].label, 'WITH');
-      assert.equal(req.app.locals.breadcrumb[5].label, 'LOTS');
-      assert.equal(req.app.locals.breadcrumb[6].label, 'OF');
-      assert.equal(req.app.locals.breadcrumb[7].label, 'SEGMENTS');
+      assert.equal(res.locals.breadcrumb[0].label, 'HOME');      
+      assert.equal(res.locals.breadcrumb[1].label, 'REALLY');
+      assert.equal(res.locals.breadcrumb[2].label, 'LONG');
+      assert.equal(res.locals.breadcrumb[3].label, 'URL');
+      assert.equal(res.locals.breadcrumb[4].label, 'WITH');
+      assert.equal(res.locals.breadcrumb[5].label, 'LOTS');
+      assert.equal(res.locals.breadcrumb[6].label, 'OF');
+      assert.equal(res.locals.breadcrumb[7].label, 'SEGMENTS');
       
       res.status(200).end();
     });
